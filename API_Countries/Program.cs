@@ -6,10 +6,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddDbContext<CountryDbContext>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: "MyPolicy",
+//        policy =>
+//        {
+//            policy.AllowAnyHeader().AllowAnyMethod();
+//            policy.WithOrigins("http://localhost:5173");
+//        });
+//});
 
 var app = builder.Build();
 
@@ -22,6 +32,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+//app.UseCors("MyPolicy");
 
 app.UseAuthorization();
 
