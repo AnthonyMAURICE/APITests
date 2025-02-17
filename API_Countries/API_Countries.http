@@ -1,6 +1,0 @@
-@API_Countries_HostAddress = http://localhost:5213
-
-GET {{API_Countries_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
