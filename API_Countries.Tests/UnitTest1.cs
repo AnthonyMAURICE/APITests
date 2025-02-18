@@ -14,5 +14,13 @@ namespace API_Countries.Tests
 
             Assert.AreEqual("FR", country.CountryCode);
         }
+
+        [TestMethod]
+        public void Test_Country_Code_Length() 
+        {
+            Country country = new();
+            country.CountryCode = "FR";
+            Assert.AreEqual(2, country.CountryCode.Length);
+        }
     }
 }
